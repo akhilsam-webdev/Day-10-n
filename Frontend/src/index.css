@@ -26,13 +26,21 @@ body,
 }
 
 .app {
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.a{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .notes {

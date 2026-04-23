@@ -40,7 +40,7 @@ const App = () => {
     });
 
     console.log(response.data);
-    getNotes();
+    setNotes((pre) => [...pre, response.data.note]);
   }
 
   return (
@@ -52,12 +52,14 @@ const App = () => {
           <button>Create Note</button>
         </form>
       </div>
-      {notes.map((item) => (
-        <div key={item._id} className="notes">
-          <h1>{item.title}</h1>
-          <p>{item.diss}</p>
-        </div>
-      ))}
+      <div className="a">
+        {notes.map((item) => (
+          <div key={item._id} className="notes">
+            <h1>{item.title}</h1>
+            <p>{item.diss}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
