@@ -22,12 +22,12 @@ This project is part of my full-stack development journey, where I practiced bui
 *   **axios**: Promise-based HTTP client used to call backend APIs.
 
 ## 📚 What I Learned
-*   **Structuring Full-Stack applications properly**: Learned to organize the project into dedicated `frontend` and `backend` folders for a clean separation of concerns.
-*   **Creating multiple API routes**: Gained experience defining endpoints to handle specific client requests from the frontend.
-*   **Handling HTTP methods**: Practiced processing GET, POST, and other standard HTTP methods to interact with data.
-*   **Working with middleware in Express**: Implemented middleware functions to process data during the request-response cycle.
-*   **Understanding request-response lifecycle deeply**: Improved my grasp of how the server receives, processes, and responds to client data.
-*   **Basics of database integration**: Successfully connected the application to MongoDB Atlas using connection strings.
+*   **Advanced Folder Architecture**: Mastered the organization of a professional Full-Stack project using a clean separation of concerns with dedicated `frontend` and `backend` directories.
+*   **MVC Pattern Basics**: Started implementing the Model-View-Controller pattern by separating database schemas (`models`), request logic (`controllers`), and endpoints (`routes`).
+*   **Database Troubleshooting**: Successfully resolved persistent connection issues like the `querySrv ECONNREFUSED` error by correctly configuring DNS settings and MongoDB Atlas connection strings.
+*   **Environment Security**: Learned to protect sensitive information like database credentials using `.env` files and `dotenv`.
+*   **Cross-Origin Communication**: Implemented `cors` to allow my React frontend to securely fetch data from my Express backend.
+*   **Modular API Design**: Gained experience defining multiple API routes and using Express middleware to process data during the request-response cycle.
 
 ## ✨ Features
 *   **Full-Stack Folder Structure**: Organized project into separate `frontend` and `backend` directories.
@@ -37,22 +37,33 @@ This project is part of my full-stack development journey, where I practiced bui
 *   **JSON request handling**: Capability to parse and respond with structured JSON data.
 
 ## 📂 Project Structure
-Referencing the **akhilsam-webdev/Day-10-n** file structure:
+Below is the refined and proper file structure for **akhilsam-webdev/Day-10-n**:
 
 ```text
 Day-10-n/
 ├── backend/
 │   ├── src/
-│   │   └── app.js       # Express application logic, routes, and middleware
-│   ├── .env             # Environment variables (DB URLs, Port)
-│   ├── .gitignore       # Prevents tracking of node_modules and .env
-│   ├── package.json     # Backend metadata and dependencies
+│   │   ├── config/      # Database connection and environment config
+│   │   ├── controllers/ # Logic for handling API requests
+│   │   ├── models/      # Mongoose schemas/models for MongoDB
+│   │   ├── routes/      # Definition of API endpoints
+│   │   ├── middleware/  # Custom Express middleware
+│   │   └── app.js       # Express application setup
+│   ├── .env             # Environment variables (DB_URL, PORT)
+│   ├── .gitignore       # Ignore node_modules and .env
+│   ├── package.json     # Backend dependencies and scripts
 │   └── server.js        # Entry point to start the HTTP server
 ├── frontend/
-│   ├── src/             # Frontend source code
-│   ├── public/          # Public assets
-│   ├── package.json     # Frontend metadata and dependencies
-│   └── .gitignore       # Prevents tracking of node_modules
+│   ├── public/          # Static assets (index.html, icons)
+│   ├── src/
+│   │   ├── components/  # Reusable React components
+│   │   ├── services/    # API calling logic (Axios instances)
+│   │   ├── App.js       # Main React component
+│   │   └── index.js     # React entry point
+│   ├── .gitignore       # Ignore node_modules
+│   ├── package.json     # Frontend dependencies and scripts
+│   └── README.md        # Frontend documentation
+└── README.md            # Root project documentation
 ```
 
 ---
